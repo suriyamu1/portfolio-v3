@@ -154,8 +154,10 @@ body #hero .hero-content .hero-buttons .action-button:active {
 }
 body #hero .potrait-img {
   z-index: 1;
-  border-radius: 8%;
   height: auto;
+}
+body #hero .potrait-img img {
+  border-radius: 8%;
 }
 body #hero .contact-links {
   display: flex;
@@ -349,9 +351,8 @@ body #skills-section .skills-grid .skill-card:hover {
   background: var(--pure-white);
   transform: translateY(-6px) scale(1.03);
 }
-body #skills-section .skills-grid .skill-card .skill-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+body #skills-section .skills-grid .skill-card img {
+  max-width: 100px;
 }
 body #skills-section .skills-grid .skill-card h3 {
   margin: 0.5rem 0;
@@ -421,9 +422,8 @@ body #skills-section .secondary-skills-grid .mini-skill-card:hover {
   background: var(--pure-white);
   transform: translateY(-4px) scale(1.02);
 }
-body #skills-section .secondary-skills-grid .mini-skill-card .mini-icon {
-  font-size: 2.5rem;
-  margin-right: 1rem;
+body #skills-section .secondary-skills-grid .mini-skill-card img {
+  max-width: 60px;
 }
 body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info {
   display: flex;
