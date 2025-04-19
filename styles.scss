@@ -129,12 +129,15 @@ body {
         font-size: 3rem;
         font-weight: 700;
         margin-bottom: 2rem;
-  
-        .gradient-text {
-          background-image: linear-gradient(to right, #4626e0, #0059f6, var(--good-blue), #0098ff, #00b2fc, #00b0f9, #00aff6, #00adf3, #0091f1, #0072e9, #0051db, #2124c3);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+        background-image: linear-gradient(
+          to right,
+          #4626e0, #0059f6, var(--good-blue),
+          #0098ff, #00b2fc, #00b0f9,
+          #00aff6, #00adf3, #0091f1,
+          #0072e9, #0051db, #2124c3
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
   
       p {
@@ -230,7 +233,7 @@ body {
     }
   }
   
-  .timeline-section {
+  #experience-section {
     padding: 5rem 2rem;
     margin: 0 auto;
     background: #f0f4f8;
