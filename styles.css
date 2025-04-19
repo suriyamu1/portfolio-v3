@@ -204,19 +204,22 @@ body #hero .contact-links .social-icons a img:hover {
 body #experience-section {
   padding: 5rem 2rem;
   margin: 0 auto;
-  background: #f0f4f8;
 }
 body #experience-section .timeline-container {
   margin-bottom: 6rem;
+  padding: 0 18vw;
 }
 body #experience-section .timeline-container .timeline-title {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #0f172a;
   width: 800px;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   text-align: left;
   margin-left: 2rem;
+  /* span {
+    border-bottom: 2px solid #2563eb;
+  } */
 }
 body #experience-section .timeline-container .timeline-wrapper {
   position: relative;
@@ -224,7 +227,7 @@ body #experience-section .timeline-container .timeline-wrapper {
   padding-left: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
 }
 body #experience-section .timeline-container .timeline-wrapper::before {
   content: "";
@@ -237,6 +240,7 @@ body #experience-section .timeline-container .timeline-wrapper::before {
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item {
   position: relative;
+  width: 700px;
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content {
   background: rgba(255, 255, 255, 0.25);
@@ -248,7 +252,7 @@ body #experience-section .timeline-container .timeline-wrapper .timeline-item .t
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 0.25rem;
   width: 700px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -257,12 +261,9 @@ body #experience-section .timeline-container .timeline-wrapper .timeline-item .t
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .company-logo {
-  width: 60px;
-  height: 60px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 0.5rem;
-  border-radius: 12px;
+  width: 75px;
+  height: auto;
+  padding-top: 1rem;
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details {
   flex: 1;
@@ -273,24 +274,26 @@ body #experience-section .timeline-container .timeline-wrapper .timeline-item .t
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .top-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 1rem;
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .top-row .company-name {
-  color: #2563eb;
-  font-weight: 600;
-  font-size: 1.4rem;
+  color: var(--arctic-blue);
+  font-weight: 700;
+  font-size: 1.3rem;
   margin: 0;
   text-align: left;
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .top-row .location {
   font-size: 0.9rem;
-  color: #6b7280;
-  font-weight: 500;
+  color: var(--cement-grey);
+  font-weight: 700;
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .role-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   margin-bottom: 0.8rem;
 }
@@ -301,8 +304,11 @@ body #experience-section .timeline-container .timeline-wrapper .timeline-item .t
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .role-row .duration {
   font-size: 0.9rem;
-  color: #3b82f6;
-  font-weight: 600;
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .space-row {
+  padding-top: 2rem;
 }
 body #experience-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .description {
   font-size: 1rem;
