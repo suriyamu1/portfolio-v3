@@ -64,16 +64,14 @@ body {
     z-index: 100;
 
     .logo {
-      font-weight: 700;
       text-decoration: none;
-      font-size: 2rem;
       letter-spacing: 2px;
       transition: 0.6s;
       color: var(--pure-white);
-
-      /* Alternative fonts: "Dancing Script", "Bebas Neue", "Caveat" (cursive) */
-      font-family: "Tilt Prism", sans-serif;
+      font-family: "Tilt Prism", sans-serif; /* Alternative fonts: "Dancing Script", "Bebas Neue", "Caveat" (cursive) */
       font-optical-sizing: auto;
+      font-weight: 700;
+      font-size: 2rem;
     }
 
     ul {
@@ -130,7 +128,6 @@ body {
       h1 {
         font-size: 3rem;
         font-weight: 700;
-        // line-height: 1.2;
         margin-bottom: 2rem;
   
         .gradient-text {
@@ -233,144 +230,144 @@ body {
     }
   }
   
-  
-
-  #experience-section {
+  .timeline-section {
+    padding: 5rem 2rem;
     margin: 0 auto;
-    padding: 4vh 20px 0;
-    color: var(--shady-black);
+    background: #f0f4f8;
   
-    h2 {
-      text-align: left;
-      margin-bottom: 25px;
-      font-size: 2rem;
-    }
+    .timeline-container {
+      margin-bottom: 6rem;
   
-    .experience-container {
-      display: flex;
-      padding: 3rem 15vw 0rem 5rem;
-      align-items: center;
-      justify-content: space-evenly;
-  
-      .experience-type {
-        color: var(--ultra-dark-blue);
-  
-        h1 {
-          font-size: 2rem;
-          line-height: 1.2;
-        }
+      .timeline-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #0f172a;
+        width: 800px;
+        margin-bottom: 4rem;
+        text-align: left;
+        margin-left: 2rem;
       }
   
-      .experiences {
+      .timeline-wrapper {
+        position: relative;
+        margin-left: 4rem;
+        padding-left: 2rem;
         display: flex;
         flex-direction: column;
-      }
+        gap: 4rem;
   
-      .experience-card {
-        max-width: 800px;
-        display: flex;
-        background: var(--pure-white);
-        border-radius: 12px;
-        padding: 20px 3rem 20px 20px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 12px var(--subtle-dark-shadow);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s ease;
-  
-        &.visible {
-          opacity: 1;
-          transform: translateY(0);
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 1rem;
+          width: 2px;
+          background: linear-gradient(to bottom, #2563eb, #3b82f6);
         }
   
-        .company-logo {
-          width: 100px;
-          height: 50px;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          font-size: 1.2rem;
-          flex-shrink: 0;
+        .timeline-item {
+          position: relative;
   
-          img {
-            width: 70px;
-          }
-        }
-  
-        .experience-details {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          margin-left: 1rem;
-  
-          .top-row {
-            height: 50px;
-            margin-bottom: 1rem;
-  
-            .company-name {
-              color: var(--primary-blue);
-              font-weight: 600;
-              font-size: 1.3rem;
-              margin: 0;
-              text-align: left;
-            }
-  
-            .location {
-              font-size: 0.9rem;
-              color: var(--cement-grey);
-              font-weight: bold;
-            }
-          }
-  
-          .role-row {
+          .timeline-content {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 4px 0 10px;
+            align-items: flex-start;
+            gap: 2rem;
+            width: 700px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
   
-            .job-title {
-              font-size: 1.05rem;
-              font-weight: 700;
-              margin: 0;
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
             }
   
-            .duration {
-              font-size: 0.9rem;
-              color: var(--dark-blue);
-              font-weight: 600;
+            .company-logo {
+              width: 60px;
+              height: 60px;
+              object-fit: contain;
+              padding: 0.5rem;
+              border-radius: 12px;
             }
-          }
   
-          .space-row {
-            height: 1.5rem;
-          }
+            .experience-details {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              margin-left: 1rem;
   
-          .description {
-            font-size: 1rem;
-            margin: 0 0 0.5rem;
-            text-align: justify;
-          }
+              .top-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
   
-          .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 1rem;
+                .company-name {
+                  color: #2563eb;
+                  font-weight: 600;
+                  font-size: 1.4rem;
+                  margin: 0;
+                  text-align: left;
+                }
   
-            .skill-tag {
-              background-color: var(--light-blue);
-              color: var(--tag-blue);
-              font-size: 0.85rem;
-              padding: 5px 10px;
-              border-radius: 5px;
+                .location {
+                  font-size: 0.9rem;
+                  color: #6b7280;
+                  font-weight: 500;
+                }
+              }
+  
+              .role-row {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 0.8rem;
+  
+                .job-title {
+                  font-size: 1.1rem;
+                  font-weight: 600;
+                  margin: 0;
+                }
+  
+                .duration {
+                  font-size: 0.9rem;
+                  color: #3b82f6;
+                  font-weight: 600;
+                }
+              }
+  
+              .description {
+                font-size: 1rem;
+                color: #374151;
+                margin-bottom: 1rem;
+                text-align: justify;
+              }
+  
+              .skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+  
+                .skill-tag {
+                  background-color: #dbeafe;
+                  color: #2563eb;
+                  font-size: 0.8rem;
+                  padding: 5px 10px;
+                  border-radius: 9999px;
+                }
+              }
             }
           }
         }
       }
     }
   }
+  
   
   #skills-section {
     min-height: 100vh;

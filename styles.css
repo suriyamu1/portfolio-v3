@@ -1,12 +1,22 @@
 :root {
   --light-blue: #e0f0ff;
+  --dd: #bae6fd;
   --primary-blue: #0073b1;
-  --accent-shadow: rgba(38,35,245,0.47);
-  --tag-blue: #1e3a8a;
+  --good-blue: #007bff;
+  --dark-blue: #1e3a8a;
+  --ultra-dark-blue: darkblue;
+  --arctic-blue: #2563eb;
+  --dark-grey: #1f2937;
   --pure-white: #FFFFFF;
   --pure-black: #000000;
-  --nav-start-color: hsla(214, 92%, 47%, 1);
-  --nav-end-color: hsla(231, 85%, 24%, 1);
+  --nav-start-color: var(--arctic-blue);
+  --nav-end-color: var(--ultra-dark-blue);
+  --tag-blue: var(--dark-blue);
+  --star-color: gold;
+  --subtle-dark-shadow: rgba(0, 0, 0, 0.06);
+  --subtle-light-shadow: rgba(255, 255, 255, 0.2);
+  --cement-grey: #777;
+  --shady-black: #333;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +44,6 @@ html {
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #f9fafb;
   background: linear-gradient(135deg, var(--pure-white) 0%, #f2f7ff 50%, #e0ecff 100%);
   /* Fade-in animation for Contact Me section */
 }
@@ -51,15 +60,14 @@ body header {
   z-index: 100;
 }
 body header .logo {
-  font-weight: 700;
   text-decoration: none;
-  font-size: 2rem;
   letter-spacing: 2px;
   transition: 0.6s;
   color: var(--pure-white);
-  /* Alternative fonts: "Dancing Script", "Bebas Neue", "Caveat" (cursive) */
-  font-family: "Tilt Prism", sans-serif;
+  font-family: "Tilt Prism", sans-serif; /* Alternative fonts: "Dancing Script", "Bebas Neue", "Caveat" (cursive) */
   font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 2rem;
 }
 body header ul {
   position: relative;
@@ -79,18 +87,16 @@ body header ul li a {
   color: var(--pure-black);
   letter-spacing: 2px;
   font-weight: 500;
-  transition: 0.6s;
+  transition: 0.2s;
 }
 body header ul li a.active {
-  color: #2563eb;
-  font-weight: 600;
+  color: var(--pure-white);
   padding: 0.25rem 1rem;
-  background-color: blue;
+  background-color: var(--dark-blue);
   border-radius: 9999px;
 }
-body header ul li a:hover, body header ul li a.active {
-  color: white;
-  background-color: #2563eb;
+body header ul li a:hover {
+  border-bottom: 2px solid var(--arctic-blue);
 }
 body #hero {
   position: relative;
@@ -114,12 +120,12 @@ body #hero .hero-content h1 {
   margin-bottom: 2rem;
 }
 body #hero .hero-content h1 .gradient-text {
-  background-image: linear-gradient(to right, #4626e0, #0059f6, #007bff, #0098ff, #00b2fc, #00b0f9, #00aff6, #00adf3, #0091f1, #0072e9, #0051db, #2124c3);
+  background-image: linear-gradient(to right, #4626e0, #0059f6, var(--good-blue), #0098ff, #00b2fc, #00b0f9, #00aff6, #00adf3, #0091f1, #0072e9, #0051db, #2124c3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 body #hero .hero-content p {
-  color: #444;
+  color: var(--shady-black);
   font-weight: 500;
   font-size: 1.125rem;
   margin-top: 1rem;
@@ -134,23 +140,19 @@ body #hero .hero-content .hero-buttons .action-button {
   padding: 0.75rem 2rem 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: white;
-  background: linear-gradient(90deg, #3b82f6, #2563eb, #0732a7);
+  color: var(--pure-white);
+  background: linear-gradient(90deg, var(--good-blue), var(--arctic-blue), var(--ultra-dark-blue));
   background-size: 200%;
   background-position: left;
   border: none;
   border-radius: 9999px;
   text-decoration: none;
   transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 20px var(--subtle-light-shadow);
   animation: pulse 3s infinite ease-in-out;
 }
 body #hero .hero-content .hero-buttons .action-button:hover {
   background-position: right;
-  box-shadow: 0 8px 30px rgb(4, 40, 118);
-}
-body #hero .hero-content .hero-buttons .action-button:active {
-  transform: scale(0.98);
 }
 body #hero .potrait-img {
   z-index: 1;
@@ -201,121 +203,126 @@ body #hero .contact-links .social-icons a img:hover {
     opacity: 1;
   }
 }
-body #experience-section {
+body .timeline-section {
+  padding: 5rem 2rem;
   margin: 0 auto;
-  padding: 4vh 20px 0;
-  color: #333;
+  background: #f0f4f8;
 }
-body #experience-section h2 {
+body .timeline-section .timeline-container {
+  margin-bottom: 6rem;
+}
+body .timeline-section .timeline-container .timeline-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  width: 800px;
+  margin-bottom: 4rem;
   text-align: left;
-  margin-bottom: 25px;
-  font-size: 2rem;
+  margin-left: 2rem;
 }
-body #experience-section .experience-container {
-  display: flex;
-  padding: 3rem 15vw 0rem 5rem;
-  align-items: center;
-  justify-content: space-evenly;
-}
-body #experience-section .experience-container .experience-type {
-  color: darkblue;
-}
-body #experience-section .experience-container .experience-type h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-}
-body #experience-section .experience-container .experiences {
+body .timeline-section .timeline-container .timeline-wrapper {
+  position: relative;
+  margin-left: 4rem;
+  padding-left: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 4rem;
 }
-body #experience-section .experience-container .experience-card {
-  max-width: 800px;
+body .timeline-section .timeline-container .timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  width: 2px;
+  background: linear-gradient(to bottom, #2563eb, #3b82f6);
+}
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item {
+  position: relative;
+}
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   display: flex;
-  background: var(--pure-white);
+  align-items: flex-start;
+  gap: 2rem;
+  width: 700px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .company-logo {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 0.5rem;
   border-radius: 12px;
-  padding: 20px 3rem 20px 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
 }
-body #experience-section .experience-container .experience-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-body #experience-section .experience-container .experience-card .company-logo {
-  width: 100px;
-  height: 50px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-body #experience-section .experience-container .experience-card .company-logo img {
-  width: 70px;
-}
-body #experience-section .experience-container .experience-card .experience-details {
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details {
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
 }
-body #experience-section .experience-container .experience-card .experience-details .top-row {
-  height: 50px;
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
-body #experience-section .experience-container .experience-card .experience-details .top-row .company-name {
-  color: var(--primary-blue);
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .top-row .company-name {
+  color: #2563eb;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin: 0;
   text-align: left;
 }
-body #experience-section .experience-container .experience-card .experience-details .top-row .location {
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .top-row .location {
   font-size: 0.9rem;
-  color: #777;
-  font-weight: bold;
+  color: #6b7280;
+  font-weight: 500;
 }
-body #experience-section .experience-container .experience-card .experience-details .role-row {
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .role-row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 4px 0 10px;
+  margin-bottom: 0.8rem;
 }
-body #experience-section .experience-container .experience-card .experience-details .role-row .job-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .role-row .job-title {
+  font-size: 1.1rem;
+  font-weight: 600;
   margin: 0;
 }
-body #experience-section .experience-container .experience-card .experience-details .role-row .duration {
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .role-row .duration {
   font-size: 0.9rem;
-  color: blue;
+  color: #3b82f6;
   font-weight: 600;
 }
-body #experience-section .experience-container .experience-card .experience-details .space-row {
-  height: 1.5rem;
-}
-body #experience-section .experience-container .experience-card .experience-details .description {
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .description {
   font-size: 1rem;
-  margin: 0 0 0.5rem;
+  color: #374151;
+  margin-bottom: 1rem;
   text-align: justify;
 }
-body #experience-section .experience-container .experience-card .experience-details .skills {
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 1rem;
+  gap: 0.5rem;
 }
-body #experience-section .experience-container .experience-card .experience-details .skills .skill-tag {
-  background-color: var(--light-blue);
-  color: var(--tag-blue);
-  font-size: 0.85rem;
+body .timeline-section .timeline-container .timeline-wrapper .timeline-item .timeline-content .experience-details .skills .skill-tag {
+  background-color: #dbeafe;
+  color: #2563eb;
+  font-size: 0.8rem;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 9999px;
 }
 body #skills-section {
   min-height: 100vh;
@@ -327,7 +334,7 @@ body #skills-section {
 body #skills-section .section-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #1f2937;
+  color: var(--dark-grey);
 }
 body #skills-section .skills-grid {
   display: grid;
@@ -344,8 +351,8 @@ body #skills-section .skills-grid .skill-card {
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--subtle-dark-shadow);
+  border: 1px solid var(--subtle-light-shadow);
 }
 body #skills-section .skills-grid .skill-card:hover {
   background: var(--pure-white);
@@ -360,7 +367,7 @@ body #skills-section .skills-grid .skill-card h3 {
 }
 body #skills-section .skills-grid .skill-card p {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: var(--cement-grey);
   margin: 0.3rem 0;
 }
 body #skills-section .skills-grid .skill-card .tags {
@@ -376,18 +383,18 @@ body #skills-section .skills-grid .skill-card .tags .tag {
   margin: 0 0.2rem;
 }
 body #skills-section .skills-grid .skill-card .tags .tag:hover {
-  background-color: #bae6fd;
+  background-color: var(--light-blue);
 }
 body #skills-section .skills-grid .skill-card .rating {
   font-size: 1.2rem;
-  color: gold;
+  color: var(--star-color);
   margin: 0.4rem 0;
 }
 body #skills-section .skills-grid .skill-card .cert-btn {
   font-size: 0.8rem;
   padding: 0.3rem 0.6rem;
   background: var(--tag-blue);
-  color: white;
+  color: var(--pure-white);
   border: none;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -395,7 +402,7 @@ body #skills-section .skills-grid .skill-card .cert-btn {
 body #skills-section .section-subtitle {
   font-size: 1.8rem;
   margin: 3rem 0 1rem;
-  color: #1f2937;
+  color: var(--dark-grey);
   text-align: center;
 }
 body #skills-section .secondary-skills-grid {
@@ -410,13 +417,13 @@ body #skills-section .secondary-skills-grid .mini-skill-card {
   align-items: center;
   height: 100px;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.2);
+  background-color: var(--pure-white);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border-radius: 1rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--subtle-light-shadow);
+  box-shadow: 0 6px 18px var(--subtle-dark-shadow);
 }
 body #skills-section .secondary-skills-grid .mini-skill-card:hover {
   background: var(--pure-white);
@@ -432,16 +439,16 @@ body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info {
 body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info h4 {
   margin: 0;
   font-size: 1.1rem;
-  color: #1f2937;
+  color: var(--dark-grey);
 }
 body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info p {
   margin: 0.2rem 0;
   font-size: 0.85rem;
-  color: #374151;
+  color: var(--dark-grey);
 }
 body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info a {
   font-size: 0.75rem;
-  color: #2563eb;
+  color: var(--arctic-blue);
   text-decoration: none;
   margin-bottom: 0.3rem;
 }
@@ -450,7 +457,7 @@ body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info a:
 }
 body #skills-section .secondary-skills-grid .mini-skill-card .mini-skill-info .mini-rating {
   font-size: 1rem;
-  color: gold;
+  color: var(--star-color);
 }
 body #achievements-section {
   padding: 4rem 2rem;
@@ -460,6 +467,7 @@ body #achievements-section .achievement-block {
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 4rem;
+  background-color: var(--pure-white);
 }
 body #achievements-section .achievement-block.reverse {
   flex-direction: row-reverse;
@@ -486,8 +494,8 @@ body #achievements-section .achievement-block .achievement-content .desc-btn p {
 }
 body #achievements-section .achievement-block .achievement-content .desc-btn .achievement-btn {
   display: inline-block;
-  background: #007bff;
-  color: #fff;
+  background: var(--good-blue);
+  color: var(--pure-white);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   text-decoration: none;
@@ -496,7 +504,7 @@ body #achievements-section .achievement-block .achievement-content .tags {
   margin-top: 1rem;
 }
 body #achievements-section .achievement-block .achievement-content .tags span {
-  background: #eee;
+  background: var(--light-blue);
   padding: 0.4rem 0.8rem;
   margin: 0.3rem;
   display: inline-block;
@@ -504,26 +512,24 @@ body #achievements-section .achievement-block .achievement-content .tags span {
   font-size: 0.9rem;
 }
 
-.sticky {
+.sticky-navbar {
   padding: 0.7vh 10vw;
   background: var(--nav-start-color);
   background: linear-gradient(0deg, var(--nav-start-color) 0%, var(--nav-end-color) 100%);
   background: -webkit-linear-gradient(0deg, var(--nav-start-color) 0%, var(--nav-end-color) 100%);
 }
-.sticky ul li a {
+.sticky-navbar ul li a {
   color: var(--pure-white);
 }
-.sticky ul li a.active {
-  color: #2563eb;
+.sticky-navbar ul li a.active {
+  color: var(--arctic-blue);
   font-weight: 600;
-  padding: 0.25rem 1rem;
-  border-radius: 9999px;
-  background-color: white;
+  background-color: var(--pure-white);
 }
-.sticky ul li a:hover {
-  color: #1d4ed8;
+.sticky-navbar ul li a:hover {
+  border-bottom: 2px solid var(--pure-white);
 }
-.sticky .logo {
+.sticky-navbar .logo {
   display: block;
   font-weight: 700;
   width: 800px;
@@ -535,38 +541,17 @@ body #achievements-section .achievement-block .achievement-content .tags span {
   visibility: visible;
 }
 
-/* Keyframe for fade-in animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* Keyframe for bounce effect */
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 8px 20px rgba(29, 57, 101, 0.3);
+    box-shadow: 0 8px 20px var(--subtle-dark-shadow);
   }
   50% {
     transform: scale(1.03);
-    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 12px 25px var(--subtle-light-shadow);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 8px 20px rgba(29, 57, 101, 0.3);
+    box-shadow: 0 8px 20px var(--subtle-dark-shadow);
   }
 }/*# sourceMappingURL=styles.css.map */
