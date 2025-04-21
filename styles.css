@@ -459,6 +459,9 @@ body #achievements-section {
   align-items: center;
   flex-direction: column;
 }
+body #achievements-section .section-title {
+  color: var(--dark-blue);
+}
 body #achievements-section h2 {
   font-size: 2.5rem;
   margin-bottom: 4rem;
@@ -478,6 +481,7 @@ body #achievements-section .achievement-block.reverse {
   flex-direction: row-reverse;
 }
 body #achievements-section .achievement-block .achievement-image {
+  flex: 0 0 350px;
   padding: 1rem;
   text-align: center;
   height: 350px;
@@ -489,35 +493,33 @@ body #achievements-section .achievement-block .achievement-image img {
   border-radius: 12px;
 }
 body #achievements-section .achievement-block .achievement-content {
-  flex: 1 1 60%;
-  padding: 3rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
   height: 350px;
 }
-body #achievements-section .achievement-block .achievement-content h3 {
+body #achievements-section .achievement-block .achievement-content .title-and-desc h3 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
-body #achievements-section .achievement-block .achievement-content .desc-btn p {
-  margin-bottom: 1rem;
+body #achievements-section .achievement-block .achievement-content .title-and-desc p span {
+  color: var(--arctic-blue);
+  font-weight: 700;
 }
-body #achievements-section .achievement-block .achievement-content .desc-btn .achievement-btn {
-  display: inline-block;
+body #achievements-section .achievement-block .achievement-content .achievement-btn {
   background: var(--good-blue);
   color: var(--pure-white);
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  padding: 0.5rem 2rem;
+  border-radius: 9999px;
+  text-align: center;
+  text-wrap: none;
   text-decoration: none;
-}
-body #achievements-section .achievement-block .achievement-content .tags {
-  margin-top: 1rem;
-}
-body #achievements-section .achievement-block .achievement-content .tags span {
-  background: var(--light-blue);
-  padding: 0.4rem 0.8rem;
-  margin: 0.3rem;
-  display: inline-block;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
 }
 
 .sticky-navbar {
