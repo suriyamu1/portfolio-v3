@@ -519,7 +519,7 @@ body #achievements-section .achievement-block .achievement-content .achievement-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .sticky-navbar {

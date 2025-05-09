@@ -606,7 +606,7 @@ body {
           display: flex;
           flex-direction: column;
           justify-content: space-between; // or flex-start if you want button at bottom
-          align-self: center;
+          align-self: flex-start;
         }
       }
     }
