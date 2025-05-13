@@ -594,19 +594,27 @@ body {
           }
         }
 
-        .achievement-btn {
-          background: var(--good-blue);
-          color: var(--pure-white);
-          padding: 0.5rem 2rem;
-          border-radius: 9999px;
-          // width: 25%;
-          text-align: center;
-          text-wrap: none;
-          text-decoration: none;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between; // or flex-start if you want button at bottom
-          align-self: flex-start;
+        .button-div {
+
+
+          .achievement-btn {
+            background: var(--good-blue);
+            color: var(--pure-white);
+            padding: 0.5rem 2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-align: center;
+            margin-right: 5px;
+            text-decoration: none;
+
+            &:hover {
+              transition: ease-in-out 5s;
+              background: var(--nav-start-color);
+              background: linear-gradient(0deg, var(--nav-start-color) 0%, var(--nav-end-color) 100%);
+              background: -moz-linear-gradient(0deg, var(--nav-start-color) 0%, var(--nav-end-color) 100%);
+              background: -webkit-linear-gradient(0deg, var(--nav-start-color) 0%, var(--nav-end-color) 100%);
+            }
+        }
         }
       }
     }
